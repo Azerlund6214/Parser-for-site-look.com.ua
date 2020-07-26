@@ -5,7 +5,7 @@
 	
 	set_time_limit(0);
 	
-	include "LIB_simple_html_dom.php";
+	//include "LIB_simple_html_dom.php";
 	
 	
 	// СКАЧАНЫ файлы
@@ -15,7 +15,7 @@
 	$target_img_path = "images/1/";
 	$sleep = 1;
 	
-	exit("См код, перед запуском надо проверить пути.");
+	//exit("См код, перед запуском надо проверить пути.");
 	
 	
 	####################
@@ -49,6 +49,7 @@
 			$img_resolution = explode( "/" , $arr_buf[0] )[4]; // "356879.jpg"
 			$img_filename = "$img_id-$img_resolution.jpg";
 			$imp_full_path = $target_img_path . $img_filename;
+			
 			echo "<br>Разбиваю ссылку:";
 			echo "<br>img id = $img_id";
 			echo "<br>resolution = $img_resolution";
@@ -63,23 +64,21 @@
 				continue;
 			}
 			
-			
 			echo "<br>Начинаю скачку";
 			file_put_contents($imp_full_path, file_get_contents($one_page_link));
 			echo " => Скачано";
-						
+			echo "<br>Размер файла = ". round(filesize($imp_full_path)/1024/1024 , 2) . " Mb";
+			
+			
+			//exit;
 		
 		}catch(Error $e){
 							echo "<br>Невалидный URL - пропускаю ($one_page_link)"; continue;
 						}
 		
 		###
-		
-		
-		###
-				
+						
 		echo "<br>Ложусь спать"; sleep($sleep);	echo " => Проснулся";
-		exit;
 		
 		$i++;
 	} #End for
