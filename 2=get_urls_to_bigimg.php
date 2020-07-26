@@ -8,14 +8,13 @@
 	include "LIB_simple_html_dom.php";
 	
 	
-	// СКАЧАНЫ прямые ссылки
-	// 1 2 3 4 5
+	// Что скачано: 1 2 3 4 5 6 7 8 9 10
 	
-	$file_path_img_urls   = "res/urls-img-6.txt";
-	$target_file_path = "res/urls-img-big-6.txt";
+	$file_path_img_urls   = "res/urls-img-10.txt";
+	$target_file_path = "res/urls-img-big-10.txt";
 	$sleep = 1;
 	
-	//exit("См код, перед запуском надо проверить пути.");
+	exit("См код, перед запуском надо проверить пути.");
 	
 	
 	####################
@@ -109,7 +108,7 @@
 	} #End for
 	
 	
-	EXIT("Конец = Вышел  из цикла");
+	EXIT("<br>Конец = Вышел  из цикла");
 	
 	
 ?>

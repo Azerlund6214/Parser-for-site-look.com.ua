@@ -9,10 +9,10 @@
 	
 	
 	// СКАЧАНЫ файлы
-	// 
+	// 1 2 3 4 5 6
 	
-	$file_path_img_urls = "res/urls-img-big-2.txt";
-	$target_img_path = "images/2/";
+	$file_path_img_urls = "res/urls-img-big-7.txt";
+	$target_img_path = "images/7/";
 	$sleep = 1;
 	
 	//exit("См код, перед запуском надо проверить пути.");
