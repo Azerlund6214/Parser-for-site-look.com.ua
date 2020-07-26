@@ -10,12 +10,13 @@
 	
 	// СКАЧАНЫ прямые ссылки
 	// 1 2 3
+	// 1 2 3 4
 	
-	$file_path_img_urls   = "res/urls-img-4.txt";
-	$target_file_path = "res/urls-img-big-4.txt";
+	$file_path_img_urls   = "res/urls-img-5.txt";
+	$target_file_path = "res/urls-img-big-5.txt";
 	$sleep = 1;
 	
-	exit("См код, перед запуском надо проверить пути.");
+	//exit("См код, перед запуском надо проверить пути.");
 	
 	
 	####################
@@ -94,8 +95,13 @@
 		
 		###
 		
-		write_in_file( $target_file_path , $BIGIMG_URL );
-		echo "<br>Записал в файл ссылку.";
+		if( $BIGIMG_URL != 'https://www.look.com.ua' )
+		{
+			write_in_file( $target_file_path , $BIGIMG_URL );
+			echo "<br>Записал в файл ссылку.";
+			
+		}
+		else { echo "<br>Итоговая ссылка была пуста."; }
 		
 		echo "<br>Ложусь спать"; sleep($sleep);	echo " => Проснулся";
 		
