@@ -8,6 +8,18 @@
 	include "LIB_simple_html_dom.php";
 	
 	
+	// СКАЧАНЫ прямые ссылки
+	// 1 2 3
+	
+	$file_path_img_urls   = "res/urls-img-4.txt";
+	$target_file_path = "res/urls-img-big-4.txt";
+	$sleep = 1;
+	
+	exit("См код, перед запуском надо проверить пути.");
+	
+	
+	####################
+	
 	
 	/**
 	 * Записывает $text в файл $filename
@@ -16,44 +28,20 @@
 	 */
 	function write_in_file( $filename, $text )
 	{
-		if ( ! $handle = fopen($filename, 'a+')) exit ("Не могу открыть файл ($filename)");
-		if (fwrite($handle, $text . PHP_EOL ) === FALSE) exit ("Не могу произвести запись в файл ($filename)");
+		if ( ! $handle = fopen($filename, 'a+'))
+			exit ("Не могу открыть файл ($filename)");
+		
+		if ( ! fwrite($handle, $text . PHP_EOL ) )
+			exit ("Не могу произвести запись в файл ($filename)");
+		
 		fclose($handle);
 	}
 	
 
+	
 
-
 	
-	
-	/*
-		// Поиск по тегам и классам
-		#########
-		#$html = file_get_contents( $post_url );
-		
-		### Explode
-		#$current_likes = explode( '</b>' , explode( '<b class="v_like" aria-hidden="true">' , $html )[1] )[0]   ;
-		#$current_views = explode( '</b>' , explode( '<b class="v_views">' , $html )[1] )[0]   ;
-		
-		### RegExp (робит, но кривовато)
-		#preg_match_all('|<b class="v_like" aria-hidden="true">(.+?)</b>|isU', $html, $current_likes);
-		#preg_match_all('|<b class="v_views">(.+?)</b>|isU', $html, $current_views);
-		
-		#unset( $html );
-		#########
-	
-	*/
-	
-	// СКАЧАНЫ прямые ссылки
-	// 1 2
-	
-	$urls_file   = "res/urls-img-3.txt";
-	$target_file = "res/urls-img-big-3.txt";
-	$sleep = 1;
-	
-	//exit("см код");
-	
-	$all_urls_from_file = file_get_contents($urls_file);
+	$all_urls_from_file = file_get_contents($file_path_img_urls);
 	
 	$arr_all_urls_from_file = explode(PHP_EOL, $all_urls_from_file );
 	
@@ -63,23 +51,8 @@
 	$time = count($arr_all_urls_from_file)*$sleep;
 	echo "<br>Расчетное время = $time секунд = ". $time/60 . " минут";
 	echo "<hr>";
-	//exit;
 	
 	//print_r($arr_all_urls_from_file); exit;
-	
-	
-	/*
-	$begin_page = 1;
-	$arr_pages_links = array();
-	for ( $i = $begin_page ; $i<=321 ; $i++ )
-	{
-		$arr_pages_links []= "https://www.look.com.ua/space/page/$i/";
-	
-	}
-	*/
-	
-	
-	//print_r($arr_pages_links); exit;
 	
 	
 	$i=1;
@@ -121,7 +94,7 @@
 		
 		###
 		
-		write_in_file( $target_file , $BIGIMG_URL );
+		write_in_file( $target_file_path , $BIGIMG_URL );
 		echo "<br>Записал в файл ссылку.";
 		
 		echo "<br>Ложусь спать"; sleep($sleep);	echo " => Проснулся";
@@ -129,6 +102,7 @@
 		
 		$i++;
 	} #End for
+	
 	
 	EXIT("Конец = Вышел  из цикла");
 	
