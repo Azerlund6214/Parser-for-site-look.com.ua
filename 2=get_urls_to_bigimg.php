@@ -9,10 +9,10 @@
 	
 	
 	// СКАЧАНЫ прямые ссылки
-	// 1 2 3 4
+	// 1 2 3 4 5
 	
-	$file_path_img_urls   = "res/urls-img-5.txt";
-	$target_file_path = "res/urls-img-big-5.txt";
+	$file_path_img_urls   = "res/urls-img-6.txt";
+	$target_file_path = "res/urls-img-big-6.txt";
 	$sleep = 1;
 	
 	//exit("См код, перед запуском надо проверить пути.");

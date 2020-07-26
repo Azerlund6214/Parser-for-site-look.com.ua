@@ -11,8 +11,8 @@
 	// СКАЧАНЫ файлы
 	// 
 	
-	$file_path_img_urls = "res/urls-img-big-1.txt";
-	$target_img_path = "images/1/";
+	$file_path_img_urls = "res/urls-img-big-2.txt";
+	$target_img_path = "images/2/";
 	$sleep = 1;
 	
 	//exit("См код, перед запуском надо проверить пути.");
@@ -84,7 +84,7 @@
 	} #End for
 	
 	
-	EXIT("Конец = Вышел  из цикла");
+	EXIT("<hr><hr><hr>Конец = Вышел  из цикла");
 	
 	
 ?>
