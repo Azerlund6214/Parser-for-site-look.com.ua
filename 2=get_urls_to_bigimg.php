@@ -9,7 +9,6 @@
 	
 	
 	// СКАЧАНЫ прямые ссылки
-	// 1 2 3
 	// 1 2 3 4
 	
 	$file_path_img_urls   = "res/urls-img-5.txt";
